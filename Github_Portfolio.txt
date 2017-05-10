@@ -1,0 +1,83 @@
+Say Hello Closed
+Let’s practice our method writing syntax! Prepare a method say_hello that takes one argument. That argument is the name of the person to be greeted. The method should then print on the screen a greeting to that person. For example:
+
+def say_hello(name)
+   "Hello " + name
+end
+
+puts say_hello("Jack")
+
+
+
+Let’s practice our method writing syntax! Prepare a method say_hello that takes one argument. That argument is the name of the person to be greeted. The method should then print on the screen a greeting to that person. For example:
+
+say_hello('Jack')
+=> "Why, hello there Jack!"
+
+Using the TDD technique, fix the add_two method so that it works with Strings. Use this code to get started.
+
+# Add 2 to the number.
+def add_two(number)
+  if number.respond_to? :+
+    if number.respond_to? :push
+      number.push 2
+    else
+      number + 2
+    end
+  end
+end
+
+def test_add_two
+    p add_two(1)
+    p add_two(1.0)
+    p add_two(nil)
+    p add_two({})
+    p add_two([])
+    p add_two(false)
+end
+
+test_add_two
+
+
+
+Here’s a new Ruby syntax we haven’t seen yet.
+%w[a b c d]
+Using introspection, figure out what this syntax does. Tell us what you discover.
+
+Introspection - examining classes, methods and keywords to know what they are, what they do and what they know.
+
+One way of introspecting something… drop it into irb and take a deeper look at it!
+
+Next, keep digging and figure out the difference between these last two lines of code:
+
+a = 1
+%w[#{a} b c d]
+%W[#{a} b c d]
+
+he %w[] creates an Array of Strings.
+%W does string interpolation (“-strings), %w does not (‘-strings).
+
+
+
+
+Super Special Closed
+pets = ["Scooby", "Soco", "Summer", "Pixie", "Wilson", "Mason","Baron", "Brinkley", "Bella"]
+
+Write a method that takes in the pets array as a parameter. Inside that method, iterate over the array using the each method. If the name starts with an “S”, output the message “My name starts with an S for super!” If the name does not begin with an “S” output the message: “I’m still pretty special too!”.
+
+  Check here to provide feedback if you feel this question is not clear enough for you to answer it Enrique Gollas marked this submission as open
+Enrique gollas
+Enrique Gollas commented 9 days.
+pets = ["Scooby", "Soco", "Summer", "Pixie", "Wilson", "Mason","Baron", "Brinkley", "Bella"]
+
+def super_special(pets_array)
+pets_array.each do |name|
+if name.start_with?("S")
+puts "My name starts with an S for super"
+else
+puts "I’m still pretty special too!"
+end
+end
+end
+
+super_special(pets)
